@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #F3F3F3;
+        }
+
+        header {
+            background-color: #696969;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #B4B4B4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #696969;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="font-family: 'Courier New', Courier, monospace;">Calculator</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Tools.html">Tools</a></li>
+        </ul>
+    </nav>
+    <main style="font-family: 'Courier New', Courier, monospace;">
+        <h1>Calculator</h1>
+    <hr>
+    <input type="number" id="no1" placeholder="Enter number 1">
+    <br>
+    <input type="number" id="no2" placeholder="Enter number 2">
+    <br>
+    <input type="button" value="+" onclick="add()">
+    <input type="button" value="-" onclick="minus()">
+    <div id="resultDiv">
+        Result will be displayed here
+    </main>
+
+    <script>
+         function add() {
+            let no1 = parseInt(document.getElementById("no1").value);
+            let no2 = parseInt(document.getElementById("no2").value);
+            let total = no1 + no2;
+            let outStr = no1 + " + " + no2 + " = " + total;
+            displayResult(outStr);
+        }
+
+        function minus() {
+            let no1 = parseInt(document.getElementById("no1").value);
+            let no2 = parseInt(document.getElementById("no2").value);
+            let total = no1 - no2;
+            let outStr = no1 + " - " + no2 + " = " + total;
+            displayResult(outStr);
+        }
+
+        function displayResult(result) {
+            document.getElementById("resultDiv").innerHTML = "<h3>Result is: " + result + "</h3>";
+            
+        }
+    </script>
+</body>
+</html>
